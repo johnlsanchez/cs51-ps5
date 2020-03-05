@@ -529,10 +529,6 @@
          | TwoBranch (Odd, e, t1, t2) ->
            let (last, q1') = get_last t1 in
            e, Tree (fix (TwoBranch (Even, last, extract_tree q1', t2)))
- 
-     let test_get_top () = 
-
-      ()
     
      let test_fix () = 
       let x = C.generate () in
@@ -562,9 +558,31 @@
       ()
 
      let test_get_last () = 
+      let x = C.generate () in
+      let t = add x empty in
+      assert (get_last (extract_tree t) = (x, Empty));
+      let y = C.generate_gt x in 
+      let t = add y t in
+      assert (get_last (extract_tree t) = (y, Tree (Leaf x)));
+      let z = C.generate_gt x in 
+      let t = add z t in 
+      assert (get_last (extract_tree t) = (z, Tree (OneBranch(x,y)))) ;
+      let w = C.generate_gt y in
+      let t = add w t in
+      assert (get_last (extract_tree t) = (w, Tree (TwoBranch(Even, x, Leaf y, Leaf z)))) ;
+      let m = C.generate_gt y in
+      let t = add m t in
+      assert (get_last (extract_tree t) = (w, Tree (TwoBranch(Odd, x, OneBranch (y,w), Leaf z)))) ;
+      let n = C.generate_gt z in
+      let t = add m t in
+      assert (get_last (extract_tree t) = (n, Tree (TwoBranch(Even, x, OneBranch (y,w), OneBranch (z,m))))) ;
+      let k = C.generate_gt y in
+      let t = add m t in
+      assert (get_last (extract_tree t) = (k, Tree (TwoBranch(Odd, x, TwoBranch (Even,y,Leaf w, Leaf n), OneBranch (z,m))))) ;
       ()
 
-     let test_get_take () = 
+
+     let test_take () = 
       let y1 = C.generate () in
       let y2 = C.generate_lt y1 in
       let y3 = C.generate_lt y2 in
@@ -600,10 +618,9 @@
       ()
 
      let run_tests () = 
-      test_get_top () ;
       test_fix () ;
       test_get_last () ;
-      test_get_take () ;;
+      test_take () ;;
       
    end
  
@@ -669,9 +686,9 @@
     implementation is *almost* equivalent to treesort; a real treesort
     relies on self-balancing binary search trees *)
  
- (*
+ 
  let treesort = sort tree_module ;;
- *)
+
  
  (* Sorting with a priority queue with an underlying unordered list
     implementation is equivalent to selection sort! If your
@@ -681,6 +698,41 @@
  
  (* You should test that these sorts all correctly work, and that lists
     are returned in non-decreasing order. *)
+
+  let test_heapsort () = 
+    assert (heapsort [] = []);
+    assert (heapsort [1] = [1]);
+    assert (heapsort [1;2] = [1;2]);
+    assert (heapsort [2;1] = [1;2]);
+    assert (heapsort [10;9;8;7;6;5;4;3;2;1;1;1] = [1;1;1;2;3;4;5;6;7;8;9;10]);
+    assert (heapsort [333;222;111;1;1;2;2] = [1;1;2;2;111;222;333]);
+    assert (heapsort [-1;-2;3;-5;-6] = [-6;-5;-2;-1;3]);
+    () 
+  ;;
+
+  let test_treesort () = 
+    assert (treesort [] = []);
+    assert (treesort [1] = [1]);
+    assert (treesort [1;2] = [1;2]);
+    assert (treesort [2;1] = [1;2]);
+    assert (treesort [10;9;8;7;6;5;4;3;2;1;1;1] = [1;1;1;2;3;4;5;6;7;8;9;10]);
+    assert (treesort [333;222;111;1;1;2;2] = [1;1;2;2;111;222;333]);
+    assert (treesort [-1;-2;3;-5;-6] = [-6;-5;-2;-1;3]);
+    () ;;
+
+  let test_selectionsort () = 
+    assert (selectionsort [] = []);
+    assert (selectionsort [1] = [1]);
+    assert (selectionsort [1;2] = [1;2]);
+    assert (selectionsort [2;1] = [1;2]);
+    assert (selectionsort [10;9;8;7;6;5;4;3;2;1;1;1] = [1;1;1;2;3;4;5;6;7;8;9;10]);
+    assert (selectionsort [333;222;111;1;1;2;2] = [1;1;2;2;111;222;333]);
+    assert (selectionsort [-1;-2;3;-5;-6] = [-6;-5;-2;-1;3]);
+    () ;;
+
+test_heapsort () ;;
+test_treesort () ;;
+test_selectionsort () ;;  
  
  (*......................................................................
  Section 4: Challenge problem: Sort function
