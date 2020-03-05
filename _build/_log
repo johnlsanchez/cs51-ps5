@@ -1,0 +1,32 @@
+### Starting build.
+# Target: tests.ml.depends, tags: { warn(A-4-33-40-41-42-43-34-44), extension:ml, file:tests.ml, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamldep -modules tests.ml > tests.ml.depends # cached
+# Target: order.ml.depends, tags: { warn(A-4-33-40-41-42-43-34-44), extension:ml, file:order.ml, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamldep -modules order.ml > order.ml.depends # cached
+# Target: order.cmo, tags: { warn(A-4-33-40-41-42-43-34-44), byte, compile, extension:cmo, extension:ml, file:order.cmo, file:order.ml, implem, ocaml, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o order.cmo order.ml # cached
+# Target: order_another.ml.depends, tags: { warn(A-4-33-40-41-42-43-34-44), extension:ml, file:order_another.ml, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamldep -modules order_another.ml > order_another.ml.depends # cached
+# Target: order_another.cmo, tags: { warn(A-4-33-40-41-42-43-34-44), byte, compile, extension:cmo, extension:ml, file:order_another.cmo, file:order_another.ml, implem, ocaml, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o order_another.cmo order_another.ml # cached
+# Target: orderedcoll.mli.depends, tags: { warn(A-4-33-40-41-42-43-34-44), extension:mli, file:orderedcoll.mli, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamldep -modules orderedcoll.mli > orderedcoll.mli.depends # cached
+# Target: orderedcoll.cmi, tags: { warn(A-4-33-40-41-42-43-34-44), byte, compile, extension:mli, file:orderedcoll.mli, interf, ocaml, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o orderedcoll.cmi orderedcoll.mli # cached
+# Target: prioqueue.mli.depends, tags: { warn(A-4-33-40-41-42-43-34-44), extension:mli, file:prioqueue.mli, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamldep -modules prioqueue.mli > prioqueue.mli.depends # cached
+# Target: prioqueue.cmi, tags: { warn(A-4-33-40-41-42-43-34-44), byte, compile, extension:mli, file:prioqueue.mli, interf, ocaml, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o prioqueue.cmi prioqueue.mli # cached
+# Target: tests.cmo, tags: { warn(A-4-33-40-41-42-43-34-44), byte, compile, extension:cmo, extension:ml, file:tests.cmo, file:tests.ml, implem, ocaml, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o tests.cmo tests.ml # cached
+# Target: orderedcoll.ml.depends, tags: { warn(A-4-33-40-41-42-43-34-44), extension:ml, file:orderedcoll.ml, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamldep -modules orderedcoll.ml > orderedcoll.ml.depends # cached
+# Target: orderedcoll.cmo, tags: { warn(A-4-33-40-41-42-43-34-44), byte, compile, extension:cmo, extension:ml, file:orderedcoll.cmo, file:orderedcoll.ml, implem, ocaml, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o orderedcoll.cmo orderedcoll.ml # cached
+# Target: prioqueue.ml.depends, tags: { warn(A-4-33-40-41-42-43-34-44), extension:ml, file:prioqueue.ml, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamldep -modules prioqueue.ml > prioqueue.ml.depends # cached
+# Target: prioqueue.cmo, tags: { warn(A-4-33-40-41-42-43-34-44), byte, compile, extension:cmo, extension:ml, file:prioqueue.cmo, file:prioqueue.ml, implem, ocaml, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o prioqueue.cmo prioqueue.ml # cached
+# Target: tests.byte, tags: { warn(A-4-33-40-41-42-43-34-44), byte, dont_link_with, extension:byte, file:tests.byte, link, ocaml, program, quiet, strict-sequence, thread, traverse, use_graphics, use_str, use_unix }
+ocamlfind ocamlc -linkpkg unix.cma str.cma graphics.cma -thread order.cmo order_another.cmo orderedcoll.cmo prioqueue.cmo tests.cmo -o tests.byte # cached
+# Compilation successful.
