@@ -1,5 +1,5 @@
 "Rule: ocaml: cmo* -> byte (%=prioqueue )": "0\004>\159\161\016\168 \164K\030\176\185\0314-"
-"Rule: ocaml: ml -> cmo & cmi (%=order )": "\174o\159\239\151${\218\239\186l\152I\004b\187"
+"Rule: ocaml: ml -> cmo & cmi (%=order )": "\147\181\163\246\000\000.dDso\224\006\204\019\014"
 "Rule: ocaml: ml & cmi -> cmo (%=prioqueue )": "\206er\146TW\207\029\203\204;6\2169&C"
 "Rule: ocaml dependencies ml (%=prioqueue )": "r \146q\238DF\176\172Q\020L/1\158\249"
 "Rule: ocaml: ml -> cmo & cmi (%=order_another )": "f%\241\251G\131w\198L\254\023$\022\"\001t"
@@ -22,5 +22,5 @@
 "Rule: ocaml dependencies ml (%=tests )": "\231\235\022)\239\n\184\202\134\173\223\238\031c\208\248"
 "Resource: /Users/johnlsanchez/Development/cs51/ps5/orderedcoll.mli": "b\218\151\219\166\137\132\181c\216!\183F\246n\195"
 "Rule: ocaml: cmo* -> byte (%=tests )": "\241\011\031+n\143\200\201\020\176U\194\233\223\138\173"
-"Rule: ocaml dependencies ml (%=order )": "\134S\164\169\165K6x\191\134\022\187D\n\193f"
+"Rule: ocaml dependencies ml (%=order )": "\193\206\163K\155\014\217\143?5(\251\247\217\152\229"
 "Rule: ocaml: ml & cmi -> cmo (%=orderedcoll )": "d:\140\230\002\255\128[\164j\\\162\tSI\220"

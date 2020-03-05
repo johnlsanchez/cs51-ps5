@@ -529,10 +529,6 @@
          | TwoBranch (Odd, e, t1, t2) ->
            let (last, q1') = get_last t1 in
            e, Tree (fix (TwoBranch (Even, last, extract_tree q1', t2)))
- 
-     let test_get_top () = 
-
-      ()
     
      let test_fix () = 
       let x = C.generate () in
@@ -600,7 +596,6 @@
       ()
 
      let run_tests () = 
-      test_get_top () ;
       test_fix () ;
       test_get_last () ;
       test_get_take () ;;
@@ -669,9 +664,9 @@
     implementation is *almost* equivalent to treesort; a real treesort
     relies on self-balancing binary search trees *)
  
- (*
+ 
  let treesort = sort tree_module ;;
- *)
+
  
  (* Sorting with a priority queue with an underlying unordered list
     implementation is equivalent to selection sort! If your
