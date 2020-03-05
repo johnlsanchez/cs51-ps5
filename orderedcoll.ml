@@ -398,7 +398,7 @@
  ......................................................................*)
  
  let minutes_spent_on_pset () : int =
-   5 ;;
+   600 ;;
  
  (*......................................................................
  It's worth reflecting on the work you did on this problem set, where
@@ -409,5 +409,5 @@
  ......................................................................*)
  
  let reflection () : string =
-   "Rodrigo: Really cool project, sadly very unfortunate time to enjoy it fully. Plus, John is an amazing partner" ;;
+   "Rodrigo: Really cool project, sadly very unfortunate time to enjoy it fully. Plus, John is an amazing partner ; John: worth thinking about the best way to structure unit tests" ;;
  
